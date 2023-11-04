@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+### terminal commands to set up the react app / on mac ###
+   $ yarn
+   $ yarn create react-app city-site-frontend // this creates the react app on your local device 
+   $ cd city-site-frontend
+   $ git add README.md
+   $ git commit -m "initail commit"
+   $ git branch -M main // this will create the main branch
+   $ git branch // run this to make sure the main branch was created 
+   $ git remote add origin https://github.com/LouisBrizuela/city-site-frontend.git // this link is the repo that you created, this will link the react app on your local device to git hub
+   $ git push -u origin main // this will push up the app to git hub
+   $ git checkout -b setup // this will create a new branch 'setup' can be named whatever you want but you must run $ git checkout -b <name of branch here>
+   ### below are useful react component libraries that must be added to achieve certain looks *** order of adding them doesnt matter ###
+   $ yarn add react-router-dom 
+   $ yarn add bootstrap
+   $ yarn add reactstrap
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+   ### Setup ###
+   *** useful extension to use will be ES7+ by dsznajder it will make creating boilerplates for js files alot easier, by using the shortcut --> rfce <-- on an emtpy .js file ***
 
-## Available Scripts
+   import these to your src/index.js file at the top // these will allow you to use the libraries that we installed earlier and keep your UI in sync with your URL
+    -> import { BrowserRouter } from 'react-router-dom';
+    -> import 'bootstrap/dist/css/bootstrap.min.css';
+    make sure to nest your <App /> inside of <BrowserRouter>
+    like this
+    <BrowserRouter>
+    <App />
+    </BrowserRouter>
+    
+    Then we create our components, pages, and assets folder inside our src folder. this is where we will place all of our logic, pictures and useful stuff that will be used on pages.
+    
+    *** also make sure to delete everything inside src/App.js and src/App.css because we will be replacing all of it with our own code. ***
 
-In the project directory, you can run:
+    inside of our src/components folder we will create our Header.js and Footer.js files
 
-### `yarn start`
+    inside of src/pages we will add our pages that we want our user to navigate too, in our case its Faq.js and Home.js *** make sure to add .js to each file so we can use javascript and common practice is to have the naming convention be in PascelCase. this goes for the components as well
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### setting up our App.js ###
+    We have to import all the pages and components that we will be using, App.js is like our central hub, we dont use any logic here for the most part we want to keep this part nice and clean and just call stuff from here
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+import React from 'react'
+import Home from './pages/Home'
+import Faq from './pages/Faq'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import './App.css'
+import { Route, Routes } from 'react-router-dom'
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    *** we will set up our routes, we do this so we have connection between pages, header and footer are not inside routes because we want every page to have a footer and header.
+    <>
+      <Header />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/faq' element={<Faq />} />
+      </Routes>
+      <Footer />
+    </>
