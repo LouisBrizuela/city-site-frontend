@@ -1,4 +1,5 @@
 ### terminal commands to set up the react app / on mac ###
+
    $ yarn
    $ yarn create react-app city-site-frontend // this creates the react app on your local device 
    $ cd city-site-frontend
@@ -18,34 +19,36 @@
    *** useful extension to use will be ES7+ by dsznajder it will make creating boilerplates for js files alot easier, by using the shortcut --> rfce <-- on an emtpy .js file ***
 
    import these to your src/index.js file at the top // these will allow you to use the libraries that we installed earlier and keep your UI in sync with your URL
-    -> import { BrowserRouter } from 'react-router-dom';
-    -> import 'bootstrap/dist/css/bootstrap.min.css';
+
+     import { BrowserRouter } from 'react-router-dom';
+     import 'bootstrap/dist/css/bootstrap.min.css';
+
     make sure to nest your <App /> inside of <BrowserRouter>
     like this
     <BrowserRouter>
     <App />
     </BrowserRouter>
     
-    Then we create our components, pages, and assets folder inside our src folder. this is where we will place all of our logic, pictures and useful stuff that will be used on pages.
+   Then we create our components, pages, and assets folder inside our src folder. this is where we will place all of our logic, pictures and useful stuff that will be used on pages.
     
-    *** also make sure to delete everything inside src/App.js and src/App.css because we will be replacing all of it with our own code. ***
+  *** also make sure to delete everything inside src/App.js and src/App.css because we will be replacing all of it with our own code. ***
 
     inside of our src/components folder we will create our Header.js and Footer.js files
 
-    inside of src/pages we will add our pages that we want our user to navigate too, in our case its Faq.js and Home.js *** make sure to add .js to each file so we can use javascript and common practice is to have the naming convention be in PascelCase. this goes for the components as well
+  inside of src/pages we will add our pages that we want our user to navigate too, in our case its Faq.js and Home.js *** make sure to add .js to each file so we can use javascript and common practice is to have the naming convention be in PascelCase. this goes for the components as well
 
 ### setting up our App.js ###
-    We have to import all the pages and components that we will be using, App.js is like our central hub, we dont use any logic here for the most part we want to keep this part nice and clean and just call stuff from here
+  We have to import all the pages and components that we will be using, App.js is like our central hub, we dont use any logic here for the most part we want to keep this part nice and clean and just call stuff from here
 
-import React from 'react'
-import Home from './pages/Home'
-import Faq from './pages/Faq'
-import Header from './components/Header'
-import Footer from './components/Footer'
-import './App.css'
-import { Route, Routes } from 'react-router-dom'
+      import React from 'react'
+      import Home from './pages/Home'
+      import Faq from './pages/Faq'
+      import Header from './components/Header'
+      import Footer from './components/Footer'
+      import './App.css'
+      import { Route, Routes } from 'react-router-dom' 
 
-    *** we will set up our routes, we do this so we have connection between pages, header and footer are not inside routes because we want every page to have a footer and header.
+  we will set up our routes, we do this so we have connection between pages, header and footer are not inside routes because we want every page to have a footer and header.
     <>
       <Header />
       <Routes>
