@@ -34,6 +34,22 @@ function Faq() {
       FAQ 3 answer
     </AccordionBody>
   </AccordionItem>
+  <AccordionItem>
+    <AccordionHeader targetId="4">
+      FAQ 4
+    </AccordionHeader>
+    <AccordionBody accordionId="4">
+      FAQ 4 answer
+    </AccordionBody>
+  </AccordionItem>
+  <AccordionItem>
+    <AccordionHeader targetId="5">
+      FAQ 5
+    </AccordionHeader>
+    <AccordionBody accordionId="5">
+      FAQ 5 answer
+    </AccordionBody>
+  </AccordionItem>
 </UncontrolledAccordion>
     </div>
   )

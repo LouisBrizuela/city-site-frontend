@@ -9,7 +9,7 @@ import {
   } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 
-function Header(props) {
+function Header() {
     const [collapsed, setCollapsed] = useState(true);
   
     const toggleNavbar = () => setCollapsed(!collapsed);
@@ -28,6 +28,11 @@ function Header(props) {
               <NavItem>
                 <NavLink to="/faq">
                   FAQ
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink to="/aboutme">
+                  About Me
                 </NavLink>
               </NavItem>
             </Nav>
