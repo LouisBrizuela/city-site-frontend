@@ -1,10 +1,7 @@
 ### terminal commands to set up the react app / on mac ###
 
-      $ yarn
       $ yarn create react-app city-site-frontend // this creates the react app on your local device 
       $ cd city-site-frontend
-      $ git add README.md
-      $ git commit -m "initail commit"
       $ git branch -M main // this will create the main branch
       $ git branch // run this to make sure the main branch was created 
       $ git remote add origin https://github.com/LouisBrizuela/city-site-frontend.git // this link is the repo that you created, this will link the react app on your local device to git hub
